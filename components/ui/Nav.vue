@@ -1,6 +1,6 @@
 <template>
 	<ul>
-		<NuxtLink custom v-slot="{href, navigate, isActive, isExactActive}" v-for="item in menuItems" :key="item.id" :to="item.url">
+		<NuxtLink custom v-slot="{href, navigate, /*isActive,*/ isExactActive}" v-for="item in menuItems" :key="item.id" :to="item.url">
 			<li :class="[{'selected': isExactActive, 'has-children': item.items}, 'menu-item-'+item.url.replace(/\//g, ''), item.style]">
 				<a v-if="item.url.startsWith('http')" :href="item.url" target="_blank">{{item.title}}</a>
 				<a v-else :href="href" @click="navigate">

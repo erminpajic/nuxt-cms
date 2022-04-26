@@ -5,7 +5,7 @@
 				<div class="footer-col footer-col1">
 					<div class="footer-title">{{ cmslabel('footer_team', 'title') }}</div>
 					<ul class="footer-nav">
-						<NuxtLink custom v-slot="{href, navigate, isActive, isExactActive}" v-for="menuItem in footerCol1Menu" :key="menuItem.id" :to="menuItem.url">
+						<NuxtLink custom v-slot="{href, navigate, /*isActive,*/ isExactActive}" v-for="menuItem in footerCol1Menu" :key="menuItem.id" :to="menuItem.url">
 							<li :class="{'selected': isExactActive}">
 								<a :href="href" @click="navigate">{{ menuItem.title }}</a>
 							</li>

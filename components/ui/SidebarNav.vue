@@ -1,6 +1,6 @@
 <template>
 	<ul class="nav-sidebar">
-		<NuxtLink custom v-slot="{href, navigate, isActive, isExactActive}" v-for="menuItem in sidebarMenu" :key="menuItem.id" :to="menuItem.url">
+		<NuxtLink custom v-slot="{href, navigate, /*isActive,*/ isExactActive}" v-for="menuItem in sidebarMenu" :key="menuItem.id" :to="menuItem.url">
 			<li :class="{'selected': isExactActive}">
 				<a :href="href" @click="navigate">{{ menuItem.title }}</a>
 			</li>

@@ -1,0 +1,167 @@
+.transition (@element: color, @speed: .3s) {
+	transition: @arguments;
+}
+.grayscale (@bw: 100%) {
+	filter: grayscale(@bw);
+	-webkit-filter: grayscale(@bw);
+	-moz-filter: grayscale(@bw);
+}
+.text-shadow (@color, @x: 1px, @y: 1px, @blur: 0px) {
+	text-shadow: @x @y @blur @color;
+}
+.gradient(@startColor: #eee, @endColor: white) {
+	background: @startColor;
+	background-image: linear-gradient(180deg, @startColor 0%, @endColor 100%);
+	background-image: -webkit-linear-gradient(180deg, @startColor 0%, @endColor 100%);
+	background-image: -moz-linear-gradient(@startColor 0%, @endColor 100%);
+	background-image: -ms-linear-gradient(180deg, @startColor 0%, @endColor 100%);
+}
+.horizontal-gradient (@startColor: #eee, @endColor: white) {
+ 	background-color: @startColor;
+	background-image: -webkit-linear-gradient(90deg, @startColor, @endColor);
+	background-image: -ms-linear-gradient(90deg, @startColor, @endColor);
+	background-image: linear-gradient(90deg, @startColor, @endColor);
+}
+.font(@fontSize, @fontLineHeight, @fontType) {
+	font-size: @fontSize;
+	line-height: @fontLineHeight; 
+	font-family: @fontType;
+}
+.pseudo(@width, @height) {
+	content:"";
+	position: absolute;
+	display: block;
+	width:@width;
+	height:@height;
+}
+.animation (@name, @duration: 300ms, @delay: 0, @ease: ease) {
+	-webkit-animation: @name @duration @delay @ease;
+	-moz-animation:    @name @duration @delay @ease;
+	-ms-animation:     @name @duration @delay @ease;
+}
+.transform(@string){
+	transform: @string;
+	-webkit-transform: @string;
+	-ms-transform: 		 @string;
+}
+.scale (@factor) {
+	transform: scale(@factor);
+	-webkit-transform: scale(@factor);
+	-ms-transform: 		 scale(@factor);
+}
+.rotate (@deg) {
+	transform: rotate(@deg);
+	-webkit-transform: rotate(@deg);
+	-ms-transform: 		 rotate(@deg);
+}
+.skew (@deg, @deg2) {
+	transform: skew(@deg, @deg2);
+	-webkit-transform: skew(@deg, @deg2);
+	-ms-transform: skew(@deg, @deg2);
+}
+.translate (@x, @y:0) {
+	transform: translate(@x, @y);
+	-webkit-transform: translate(@x, @y);
+	-ms-transform: translate(@x, @y);
+}
+.translate3d (@x, @y: 0, @z: 0) {
+	transform: translate3d(@x, @y, @z);
+	-webkit-transform: translate3d(@x, @y, @z);
+	-ms-transform: translate3d(@x, @y, @z);
+}
+.perspective (@value: 1000) {
+	perspective: 		@value;
+	-webkit-perspective: 	@value;
+}
+.clear { 
+	*zoom: 1; clear:both;
+	&:before, &:after {content:""; display: table; }
+	&:after { clear: both; }
+}
+.placeholder(@color,@focusColor) {
+	&::-webkit-input-placeholder { color: @color; }
+	&:-ms-input-placeholder { color: @color; }
+	&::-moz-placeholder { color: @color; }
+	&:focus {
+		&::-webkit-input-placeholder { color: @focusColor; }
+		&:-ms-input-placeholder { color: @focusColor; }
+		&::-moz-placeholder { color: @focusColor; }
+	}
+}
+.shadow { content:""; position: absolute; left: 35px; right: 35px; top: 20px; bottom: 5px; box-shadow: 0px 10px 65px rgba(0,0,0,.6); }
+.lloader {
+	background: #fff url(~assets/images/loader.svg) no-repeat center center; 
+	img { opacity: 0; .transition(opacity); }
+	&.loaded {
+		background: #fff;
+		img { opacity: 1; }
+	}
+}
+
+/*------- fonts -------*/
+@font-face {
+    font-family: 'icomoon';
+    src: url('~assets/fonts/icomoon.woff?4vq4o9') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/*------- /fonts -------*/
+
+/*------- icons -------*/
+.icon-cart {
+  content: "\e900";
+}
+.icon-check {
+  content: "\e901";
+}
+.icon-danger-red {
+  content: "\e902";
+}
+.icon-danger-white {
+  content: "\e903";
+}
+.icon-menu {
+  content: "\e904";
+}
+.icon-search {
+  content: "\e905";
+}
+.icon-arrow {
+  content: "\e906";
+}
+.icon-x {
+  content: "\e907";
+}
+.icon-info {
+  content: "\e908";
+}
+.icon-download {
+  content: "\e909";
+}
+.icon-trash {
+  content: "\e90a";
+}
+/*------- /icons -------*/
+
+/*------- buttons -------*/
+.btn, input[type=submit], button{
+	position: relative; display: inline-block; vertical-align: middle; padding: 0 25px; height: 50px; font-size: 16px; line-height: 51px; color: #fff; background: @primaryColor; text-decoration: none; border-radius: @borderRadius; .transition(all); text-align: center;
+	&:hover{color: #fff; background: #333; text-decoration: none;}
+}
+.btn-primary{
+	background: @primaryColor;
+	&:hover{background: @primaryColor/1.1;}
+}
+.btn-secondary{
+	background: @secondaryColor;
+	&:hover{background: @secondaryColor/1.1;}
+}
+.btn-third{
+	background: @thirdColor;
+	&:hover{background: @thirdColor/1.1;}
+}
+.btn-green{
+	background: @green;
+	&:hover{background: @green/1.1;}	
+}
+/*------- /buttons -------*/
